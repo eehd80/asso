@@ -1,0 +1,545 @@
+@import "variables";
+@import "mixin";
+
+.mVisual {
+    position: relative;
+    background-color: $prim1;
+
+    .slick-slide {
+        position: relative;
+        height: 1000px;
+        background-size: cover;
+        background-position: 50% 0;
+        &.slick-active {
+            .tit {
+                opacity: 1;
+                margin-left: 0;
+            }
+        }
+
+        .tit {
+            display: block;
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 1203px;
+            width: 100%;
+            margin: auto;
+            color: $w;
+            font-size: 9rem;
+            letter-spacing: -0.1rem;
+            // font-weight: normal;
+            font-family: "EliceDigitalBaeum_Bold";
+            opacity: 0;
+            transition: all 1s;
+            margin-left: 200px;
+            strong {
+                color: $prim1;
+            }
+        }
+    }
+
+    .tit- {
+        display: flex;
+        position: relative;
+        height: 350px;
+        .txt {
+            font-size: 5rem;
+            letter-spacing: -0.05rem;
+            font-family: "MaruBuri-Regular";
+        }
+        .img {
+            position: absolute;
+            right: 0;
+            img {
+                display: block;
+            }
+        }
+    }
+
+    .tit-top {
+        align-items: flex-end;
+        background-color: $prim1;
+        .txt {
+            color: $prim2;
+        }
+        .img {
+            bottom: 0;
+            z-index: 1;
+        }
+    }
+    .tit-bottom {
+        color: $prim1;
+        background-color: $prim2;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .mVisual .slick-slide .tit {
+        font-size: 18vw;
+    }
+}
+
+/* 애니메이션 */
+
+@keyframes play_bar {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+#mainContainer {
+    position: absolute;
+    top: 400px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* 메인 - section01 배너 */
+.section1 .inner {
+    overflow: hidden;
+    > div {
+        position: relative;
+    }
+}
+.section1 .banner01 {
+    float: left;
+    width: 340px;
+    height: 460px;
+    padding: 30px 25px;
+    background-color: rgba($prim1, 0.9);
+    .slick-arrow {
+        top: 100px;
+        &::before {
+            font-family: "Line Awesome Free";
+            font-weight: 900;
+            font-size: 30px;
+            padding: 5px;
+            background-color: $b;
+        }
+    }
+    .slick-prev::before {
+        content: "\f104";
+    }
+    .slick-next {
+        right: 10px !important;
+        &::before {
+            content: "\f105";
+        }
+    }
+
+    .btnMore a {
+        display: block;
+        width: 150px;
+        height: 40px;
+        line-height: 40px;
+        color: #fff;
+        margin: 20px auto;
+        border: 1px solid #fff;
+
+        &:hover {
+            background-color: #fff;
+            color: #222;
+            transition: all 400ms ease-in-out;
+            -webkit-transition: all 400ms ease-in-out;
+            -moz-transition: all 400ms ease-in-out;
+        }
+    }
+}
+
+.product_img {
+    width: 300px;
+    margin: 20px auto;
+
+    img {
+        width: 100%;
+        height: 160px;
+    }
+
+    .visual-inner-txt {
+        text-align: center;
+        span.cate {
+            display: inline-block;
+            margin-top: 20px;
+            color: #fff;
+            opacity: 0.7;
+            border-bottom: 2px solid #fff;
+        }
+
+        h2 {
+            display: block;
+            font-size: 18px;
+            color: #f9ffc6;
+            margin: 10px 0 30px;
+        }
+
+        strong {
+            font-weight: 400;
+            line-height: 1.3em;
+        }
+    }
+}
+
+.center {
+    .slick-arrow {
+        position: absolute;
+        top: 90px;
+        width: 30px;
+        height: 30px;
+        left: 0;
+        background: none;
+        border: 0;
+        cursor: pointer;
+        z-index: 1000;
+        font-size: 0;
+        -moz-transition: all 300ms;
+        -o-transition: all 300ms;
+        -ms-transition: all 300ms;
+        transition: all 300ms;
+
+        &.slick-prev {
+            background: url(../images/icon/arr_icon.png) no-repeat;
+            background-position: (-10px) -170px;
+        }
+
+        &.slick-next {
+            left: auto;
+            right: 0px;
+            background: url(../images/icon/arr_icon.png) no-repeat;
+            background-position: (-65px) -170px;
+        }
+    }
+
+    .scroll-icon {
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        width: 72px;
+        margin-left: -36px;
+        text-align: center;
+
+        span {
+            display: block;
+            color: #fff;
+            font-weight: 300;
+            font-size: 10px;
+            opacity: 0.75;
+            filter: Alpha(opacity = 75);
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.visual-txt a {
+    position: relative;
+    text-align: left;
+    margin: 10px auto;
+    padding: 6px 7px 5px 20px;
+    width: 100px;
+    line-height: 30px;
+    height: 30px;
+    display: block;
+    background-color: #022545;
+    color: #fff;
+    border: 1px solid #011c35;
+    font-size: 13px;
+    -moz-transition: all 300ms;
+    -o-transition: all 300ms;
+    -ms-transition: all 300ms;
+    transition: all 300ms;
+    z-index: 1000;
+
+    &:hover {
+        color: #022545;
+        border: 1px solid #011c35;
+        background-color: #fff;
+        -moz-transition: all 300ms;
+        -o-transition: all 300ms;
+        -ms-transition: all 300ms;
+        transition: all 300ms;
+    }
+
+    i {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+}
+
+/* 탭 & 알림 게시판 레스트 추출 */
+
+.noticeArea {
+    &.notice_bg {
+        background-color: rgba($w, 0.95);
+        .sec-tit {
+            color: $b;
+        }
+        .link-more::before {
+            color: $b;
+        }
+    }
+    position: relative;
+    float: left;
+    width: 270px;
+    height: 360px;
+    padding: 25px;
+    background-color: rgba($prim3, 0.9);
+
+    h3 {
+        display: block;
+        height: 35px;
+        line-height: 35px;
+        color: #a6a6a6;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    a.other_links {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 31px;
+        height: 31px;
+        background: url("../img/main/more.png") 0 0 no-repeat;
+        text-indent: -99999em;
+    }
+
+    ol {
+        margin-top: 17px;
+
+        li {
+            width: 230px;
+            height: 90px;
+            padding-top: 4px;
+            border-bottom: 1px dashed #d9d9d9;
+            font-family: "Nanum-regular";
+
+            &:first-child {
+                margin-left: 0px;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+
+            a {
+                display: block;
+                overflow: hidden;
+                font-size: 14px;
+                height: 80px;
+            }
+        }
+
+        &.txtWhite li a {
+            color: #fff;
+        }
+
+        li a:hover {
+            opacity: 0.6;
+            transition: all 300ms ease-in-out;
+            -webkit-transition: all 300ms ease-in-out;
+            -moz-transition: all 300ms ease-in-out;
+        }
+    }
+}
+
+.txt_date {
+    display: block;
+    padding: 10px 0 2px;
+    font-size: 14px;
+    color: #ffd194;
+    font-weight: 700;
+}
+
+.txt_date2 {
+    display: block;
+    padding: 10px 0 2px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #a6a6a6;
+}
+
+.txt_tit {
+    display: block;
+    padding: 0px 0 10px;
+    font-size: 15px;
+    line-height: 1.4em;
+}
+
+/* 우축 바로가기 banner02 배너*/
+
+.banner02 {
+    position: relative;
+    float: left;
+    width: 323px;
+    height: 350px;
+
+    li {
+        height: 180px !important;
+
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 20px 25px;
+
+            i {
+                margin-bottom: 5px;
+                color: #fff;
+                font-size: 30px;
+            }
+            .sec-tit {
+                color: $b;
+            }
+            p {
+                margin-top: 10px;
+                font-size: 14px;
+            }
+        }
+
+        &.icnBanner01 {
+            background-color: rgba($prim2, 0.9);
+            img {
+                height: 100%;
+            }
+        }
+
+        &.icnBanner02 {
+            background-color: rgba($prim1, 0.9);
+        }
+    }
+}
+
+/* 메인 ::  채용공고 바로가기 */
+
+.recu_btn {
+    position: Relative;
+    float: left;
+    background-color: rgba($prim2, 0.9);
+    width: 863px;
+    height: 100px;
+    padding: 21px 30px 0;
+    text-align: center;
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 36px;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+    }
+
+    li {
+        height: 100px;
+        width: 20%;
+        float: left;
+        display: block;
+        box-sizing: border-box;
+        line-height: 100px;
+
+        &:first-child {
+            border-left: 0px;
+        }
+
+        a {
+            display: block;
+            padding: 0 2%;
+            -moz-transition: all 300ms;
+            -o-transition: all 300ms;
+            -ms-transition: all 300ms;
+            transition: all 300ms;
+
+            &:hover {
+                opacity: 0.8;
+                -moz-transition: all 300ms;
+                -o-transition: all 300ms;
+                -ms-transition: all 300ms;
+                transition: all 300ms;
+            }
+
+            i {
+                float: left;
+                display: inline-block;
+                background-color: #fff;
+                font-size: 2em;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                line-height: 70px;
+                text-align: Center;
+                margin: 0 10px;
+                color: #395694;
+                -moz-transition: all 300ms;
+                -o-transition: all 300ms;
+                -ms-transition: all 300ms;
+                transition: all 300ms;
+            }
+
+            &:hover i {
+                background-color: #395694;
+                color: #fff;
+                -moz-transition: all 300ms;
+                -o-transition: all 300ms;
+                -ms-transition: all 300ms;
+                transition: all 300ms;
+            }
+
+            p {
+                margin-left: 0;
+                // margin-top: 10px;
+                display: inline-block;
+                line-height: 24px;
+                vertical-align: top;
+                font-size: 14px;
+                fwb strong {
+                    display: block;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #header .utility {
+        display: none;
+    }
+    .mVisual {
+        height: 2000px;
+        background: rgba($b, 0.5);
+    }
+    #mainContainer {
+        top: 300px;
+    }
+    .section1 .banner01,
+    .noticeArea {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .noticeArea ol li {
+        width: 100%;
+    }
+    .banner02 {
+        width: 100%;
+    }
+    .recu_btn {
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 21px 10px;
+    }
+    .recu_btn li {
+        transform: scale(0.8);
+    }
+    .recu_btn li a p {
+        white-space: nowrap;
+    }
+}
