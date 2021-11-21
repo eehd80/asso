@@ -316,8 +316,6 @@
     #gnb {
         display: none;
     }
-}
-@media screen and (max-width: 600px) {
     .utility {
         display: none;
     }
@@ -392,7 +390,7 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
     .nav-total > button {
         left: auto;
         right: 10px;
@@ -816,6 +814,9 @@
             font-size: 14px;
             vertical-align: top;
         }
+        a {
+            color: #abb1ba;
+        }
     }
     .copyright {
         color: #abb1ba;
@@ -833,13 +834,17 @@
             text-align: center;
         }
         .f_menu {
+            margin-bottom: 15px;
             li {
                 display: inline-block;
                 float: none;
+                margin-right: 5px;
+                padding-right: 5px;
             }
         }
         address {
             text-align: center;
+            letter-spacing: -0.05rem;
         }
         .copyright {
             text-align: center;

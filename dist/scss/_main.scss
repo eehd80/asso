@@ -3,6 +3,7 @@
 
 .mVisual {
     position: relative;
+    overflow: hidden;
     background-color: $prim1;
 
     .slick-slide {
@@ -77,6 +78,8 @@
 
 @media screen and (max-width: 600px) {
     .mVisual .slick-slide .tit {
+        top: 100px;
+        padding-left: 2%;
         font-size: 18vw;
     }
 }
@@ -391,7 +394,7 @@
             i {
                 margin-bottom: 5px;
                 color: #fff;
-                font-size: 30px;
+                font-size: 40px;
             }
             .sec-tit {
                 color: $b;
@@ -399,6 +402,7 @@
             p {
                 margin-top: 10px;
                 font-size: 14px;
+                letter-spacing: -0.07rem;
             }
         }
 
@@ -420,7 +424,7 @@
 .recu_btn {
     position: Relative;
     float: left;
-    background-color: rgba($prim2, 0.9);
+    background-color: rgba($w, 1);
     width: 863px;
     height: 100px;
     padding: 21px 30px 0;
@@ -430,6 +434,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 100%;
         height: 36px;
     }
 
@@ -467,7 +472,6 @@
             }
 
             i {
-                float: left;
                 display: inline-block;
                 background-color: #fff;
                 font-size: 2em;
@@ -500,7 +504,7 @@
                 line-height: 24px;
                 vertical-align: top;
                 font-size: 14px;
-                fwb strong {
+                strong {
                     display: block;
                     margin-bottom: 5px;
                 }
@@ -509,16 +513,16 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 980px) {
     #header .utility {
         display: none;
     }
     .mVisual {
-        height: 2000px;
+        height: 1800px;
         background: rgba($b, 0.5);
     }
     #mainContainer {
-        top: 300px;
+        top: 240px;
     }
     .section1 .banner01,
     .noticeArea {
@@ -529,7 +533,13 @@
         width: 100%;
     }
     .banner02 {
+        display: flex;
+        flex-wrap: wrap;
         width: 100%;
+        height: auto;
+        li {
+            width: 50%;
+        }
     }
     .recu_btn {
         flex-wrap: wrap;
@@ -541,5 +551,18 @@
     }
     .recu_btn li a p {
         white-space: nowrap;
+    }
+}
+@media screen and (max-width: 480px) {
+    .mVisual {
+        height: 1860px;
+    }
+    #mainContainer {
+        top: 180px;
+    }
+    .banner02 {
+        li {
+            width: 100%;
+        }
     }
 }
