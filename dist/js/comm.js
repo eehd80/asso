@@ -43,7 +43,7 @@ $(function () {
         .trigger("scroll");
 
     // mobile nav
-    let $depth1 = $(".depth_1 > li"),
+    let $depth1 = $(".depth-1 > li"),
         $depth1Link = $depth1.find("> a");
 
     $depth1Link.click(function (event) {
@@ -68,60 +68,71 @@ $(function () {
         activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
     });
 
-    // slick
-    // contTop
-    $(".slick-banner1").slick({
-        infinite: true,
-        // autoplay: true,
-        autoplaySpeed: 2000,
-        dots: true,
-        arrows: false,
-    });
-
-    $(".slick-banner2").slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        responsive: [
-            {
-                breakpoint: 996,
-                settings: {
-                    slidesToShow: 2,
-                },
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                },
-            },
-        ],
-    });
-
-    // tab
-    $(".tab-wrap").each(function () {
-        let $this = $(this);
-
-        $this.find(".menu_list .btn").click(function () {
-            var $this = $(this);
-            var index = $this.index();
-
-            $this.addClass("active");
-            $this.siblings("button.active").removeClass("active");
-
-            var $outer = $this.closest(".tab-wrap");
-            var $current = $outer.find(" > .tabs > .tab.active");
-            var $post = $outer.find(" > .tabs > .tab").eq(index);
-
-            $current.removeClass("active");
-            $post.addClass("active");
-            // 위의 코드는 탭메뉴 코드입니다.
-
-            // $(".slider").slick("setPosition");
-            // 탭 페이지 안에서 slick 사용시 – slick이 첫페이지에 있지 않으면 slick의 첫번째 이미지가 보이지 않고 2번째 부터 도는것을 확인 할 수 있다. 해당 문제는 탭이 active가 된 후 그 페이지에 slick이 있다면 = slick의 위치를 수동으로 새로 고쳐줘야 한다.
-        });
-    });
-
     // main
+    var visualSwiperNum = $(".visual-swiper .swiper-slide").length;
+    var visualSwiper = new Swiper(".visual-swiper", {
+        //effect: 'fade',
+        loop: true,
+        autoplay: {
+            delay: 8000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".visual-button-next",
+            prevEl: ".visual-button-prev",
+        },
+        pagination: {
+            el: ".main-visual .swiper-pagination",
+            clickable: true,
+            renderBullet: function (index, className) {
+                return '<a class="' + className + '">0' + (index + 1) + "</a>";
+            },
+        },
+        on: {
+            init: function () {
+                var titleText = $(".main-visual .swiper-slide-active").find("span.title").text();
+                var titleLink = $(".main-visual .swiper-slide-active").find("span.link").text();
+                $(".main-visual .swiper-control p.title").text(titleText);
+                $(".main-visual article .more a").attr("href", titleLink);
+                if (titleLink) {
+                    $(".main-visual article .more").css({ opacity: 1 });
+                } else {
+                    $(".main-visual article .more").css({ opacity: 0 });
+                }
+
+                $(".main-visual .space-swiper-pn>i").removeClass("progressing");
+                playVideo($(".main-visual .swiper-slide-active"));
+            },
+            slideChangeTransitionStart: function (e) {
+                var titleText = $(".main-visual .swiper-slide-active").find("span.title").text();
+                var titleLink = $(".main-visual .swiper-slide-active").find("span.link").text();
+                $(".main-visual .swiper-control p.title").text(titleText);
+                $(".main-visual article .more a").attr("href", titleLink);
+                if (titleLink) {
+                    $(".main-visual article .more").css({ opacity: 1 });
+                } else {
+                    $(".main-visual article .more").css({ opacity: 0 });
+                }
+
+                $(".main-visual .space-swiper-pn>i").removeClass("progressing");
+                var pn = e.realIndex + 1;
+                $(".main-visual .swiper-pagination a")
+                    .eq(0)
+                    .text("0" + pn);
+            },
+            slideChangeTransitionEnd: function (e) {
+                setTimeout(function () {
+                    $(".main-visual .space-swiper-pn>i").addClass("progressing");
+                    playVideo($(".main-visual .swiper-slide-active"));
+                }, 500);
+            },
+        },
+    });
+
+    function playVideo(ele) {
+        $("video")[0].pause();
+        if (ele.find("video").length) {
+            ele.find("video")[0].play();
+        }
+    }
 });

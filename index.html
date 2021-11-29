@@ -25,12 +25,11 @@
             rel="stylesheet"
             href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
         />
-        <link rel="stylesheet" href="./dist/vendor/slick/slick.css" />
-        <link rel="stylesheet" href="./dist/vendor/slick/slick-theme.css" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
         <link rel="stylesheet" href="./dist/css/comm.css" />
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="./dist/vendor/slick/slick.min.js"></script>
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
         <script src="./dist/vendor/scrollUp/jquery.scrollUp.min.js"></script>
         <script src="./dist/js/comm.js"></script>
         <!--[if lt IE 9]>
@@ -48,7 +47,7 @@
             <!-- header -->
             <!-- 스크롤 시 .bg-light .navbar-light 추가 -->
             <!-- 마우스 오버시 .active 추가 -->
-            <header id="header">
+            <div id="header">
                 <div class="wrap-header container">
                     <h1 class="logo"><a href="index.html">주간연예</a></h1>
                     <div id="gnb">
@@ -167,245 +166,329 @@
                         <a href="#" class="btn_sign signup"><span class="txt">회원가입</span></a>
                     </div>
                 </div>
-            </header>
+            </div>
 
             <!-- //header -->
             <!-- mVisual -->
-            <div class="mVisual">
-                <div class="slick-visual">
-                    <div style="background-image: url(./images/main/slick-intro-1.jpg)">
-                        <div class="tit"><strong>잡지</strong>를 보다</div>
-                    </div>
-                    <div style="background-image: url(./images/main/slick-intro-2.jpg)">
-                        <div class="tit"><strong>세상</strong>을 보다</div>
+            <section class="main-visual">
+                <div class="swiper-container visual-swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <div class="part1 ani-delay05">
+                                <div class="visual pc" style="background-image: url(./images/main/slide-intro-2.jpg)"></div>
+                                <div class="visual m" style="background-image: url(./images/main/slide-intro-2.jpg)"></div>
+
+                                <strong class="tit">space</strong>
+                            </div>
+                        </li>
+
+                        <li class="swiper-slide">
+                            <div class="part1 ani-delay05">
+                                <div class="visual pc" style="background-image: url(./images/main/slide-intro-3.jpg)"></div>
+                                <!-- [D] 웹이미지 //  -->
+                                <div class="visual m" style="background-image: url(./images/main/slide-intro-3.jpg)"></div>
+                                <!-- [D] 모바일이미지 //  -->
+
+                                <strong class="tit">WAVE</strong>
+                            </div>
+                        </li>
+
+                        <li class="swiper-slide">
+                            <div class="part1 ani-delay05">
+                                <div class="visual pc" style="background-image: url(./images/main/slide-intro-1.jpg)"></div>
+                                <!-- [D] 웹이미지 //  -->
+                                <div class="visual m" style="background-image: url(./images/main/slide-intro-1.jpg)"></div>
+                                <!-- [D] 모바일이미지 //  -->
+
+                                <strong class="tit">Culture</strong>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="swiper-control ani animate__slideInUp ani-delay15">
+                        <div class="space-swiper-pn">
+                            <div class="swiper-pagination"></div>
+                            <div class="space-swiper-pn-num"></div>
+                            <i></i>
+                        </div>
+                        <p class="swiper-nav">
+                            <span class="visual-button-prev"><i class="las la-angle-left"></i></span>
+                            <span class="visual-button-next"><i class="las la-angle-right"></i></span>
+                        </p>
                     </div>
                 </div>
-                <!-- <div class="tit- tit-top">
-                    <div class="txt container">
-                        <strong>잡지</strong>를 보다
-                        <div class="img"><img src="./images/main/img-intro.png" alt="" /></div>
+
+                <div class="box-color"></div>
+                <article class="ani animate__slideInLeft swiper-txt-wrap">
+                    <div class="swiper-txt">
+                        <strong class="tit">잡지가 있는 삶</strong>
+                        <em class="emp">Life with magazines.</em>
+                        <p class="txt">
+                            Lorem ipsum dolor sit amet consectetur <br class="only-pc" />
+                            adipisicing elit. Corporis, temporibus vero.
+                        </p>
                     </div>
-                </div>
-                <div class="tit- tit-bottom">
-                    <div class="txt container"><strong>세상</strong>을 보다</div>
-                </div> -->
-            </div>
-            <script>
-                $(document).ready(function () {
-                    $(".slick-visual").slick({
-                        infinite: true,
-                        autoplay: true,
-                        autoplaySpeed: 5000,
-                        fade: true,
-                    });
-                });
-            </script>
+                </article>
+            </section>
             <!-- //mVisual -->
 
             <!-- main -->
-            <!-- container -->
-            <div id="mainContainer">
-                <!-- container -->
-                <section id="container" class="container">
-                    <!--  컨텐츠 -->
-                    <div class="section1">
-                        <div class="inner">
-                            <!-- 소개 배너-->
-                            <div class="banner01 al_center">
-                                <h2 class="sec-tit">행사사진</h2>
-                                <div class="center">
-                                    <div class="product_img">
-                                        <img alt="프로덕트이미지" src="./images/main/thumnail1.jpeg" />
-                                        <div class="visual-txt">
-                                            <div class="visual-inner-txt">
-                                                <span class="cate">잡지의 날</span>
-                                                <h2>제56회 잡지의 날 기념식</h2>
-                                                <a tabindex="0" class="btn_more" href="#">자세히보기 <i class="las la-angle-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product_img">
-                                        <img alt="프로덕트이미지" src="./images/main/thumnail2.jpeg" />
-                                        <div class="visual-txt">
-                                            <div class="visual-inner-txt">
-                                                <span class="cate">창업지원단 PROGRAMS</span>
-                                                <h2>창업훈련</h2>
-                                                <a tabindex="0" class="btn_more" href="#">자세히보기 <i class="las la-angle-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product_img">
-                                        <img alt="프로덕트이미지" src="./images/main/thumnail3.jpeg" />
-                                        <div class="visual-txt">
-                                            <div class="visual-inner-txt">
-                                                <span class="cate">창업지원단 PROGRAMS</span>
-                                                <h2>창업네트워킹</h2>
-                                                <a tabindex="0" class="btn_more" href="#">자세히보기 <i class="las la-angle-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="link-more">더보기</a>
-                            </div>
-                            <!--소개 배너-->
+            <div id="main">
+                <!-- 소개 -->
+                <div class="mIntro">
+                    <div class="container">
+                        <h2 class="blind">한국잡지협회란?</h2>
+                        <ul class="mIntro-lst">
+                            <li>
+                                <span class="thumb">
+                                    <img src="./images/main/img-intro1.jpg" alt="" />
+                                </span>
+                                <strong class="tit">Lorem ipsum dolor</strong>
+                                <p class="txt">Eligendi pariatur dicta tempore dolore harum ipsam labore quis animi maxime</p>
+                            </li>
+                            <li>
+                                <span class="thumb">
+                                    <img src="./images/main/img-intro2.jpg" alt="" />
+                                </span>
+                                <strong class="tit">Lorem ipsum dolor</strong>
+                                <p class="txt">Eligendi pariatur dicta tempore dolore harum ipsam labore quis animi maxime</p>
+                            </li>
+                            <li>
+                                <span class="thumb">
+                                    <img src="./images/main/img-intro3.jpg" alt="" />
+                                </span>
+                                <strong class="tit">Lorem ipsum dolor</strong>
+                                <p class="txt">Eligendi pariatur dicta tempore dolore harum ipsam labore quis animi maxime</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //소개 -->
+                <!-- 바로가기 배너 -->
+                <div class="mGoto">
+                    <div class="container">
+                        <h2 class="blind">주요메뉴 바로가기</h2>
+                        <ul class="mGoto-lst">
+                            <li>
+                                <a href="#">
+                                    <i class="las la-book"></i>
+                                    <strong class="tit">납부확인서 출력</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="las la-stream"></i>
+                                    <strong class="tit">매거진저널</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="las la-comment-dots"></i>
+                                    <strong class="tit">저작원상담</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="las la-coffee"></i>
+                                    <strong class="tit">회원사현황</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="las la-file-archive"></i>
+                                    <strong class="tit">자료실</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- // 바로가기 배너 -->
 
-                            <script type="text/javascript">
-                                $(".center").slick({
-                                    infinite: true,
-                                    slidesToShow: 1,
-                                    slidesToScroll: 1,
-                                    // autoplay: true,
-                                    autoplaySpeed: 2000,
-                                    responsive: [
-                                        {
-                                            breakpoint: 968,
-                                            settings: {
-                                                slidesToShow: 1,
-                                                slidesToScroll: 1,
-                                            },
-                                        },
-                                        {
-                                            breakpoint: 640,
-                                            settings: {
-                                                slidesToShow: 1,
-                                                slidesToScroll: 1,
-                                            },
-                                        },
-                                    ],
-                                });
-                            </script>
+                <!-- news -->
+                <div class="sec-g mNews">
+                    <div class="container">
+                        <h2 class="blind">공지사항</h2>
+                        <ul class="mNews_lst">
+                            <li>
+                                <a href="#">
+                                    <em class="category">공지사항</em>
+                                    <strong class="tit">[공지] 제14회 잡지 미디어 콘텐츠 공모전 결과 발표 </strong>
+                                    <p class="txt">
+                                        제14회 잡지 미디어 콘텐츠 공모전' 심사 결과를 아래와 같이 발표합니다. (사)한국잡지협회에서 주관하고
+                                        문화체육관광부, 한국언론진흥재단, 서울특별시, 서울특별시교육청, 국립중앙도서관,
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <em class="category">잡지계동향</em>
+                                    <strong class="tit"
+                                        >월간 '골프헤럴드' 이순숙 발행인, 창간 30주년 기념집 『2021년 이제는 골프도 한류다』 출간</strong
+                                    >
+                                    <p class="txt">
+                                        올해 창간 30주년을 맞은 골프헤럴드(발행인 이순숙)가 9일 창간 기념행사를 갖고 한국 골프의 살아있는
+                                        전설 한장상 프로에게 순금(5돈)으로 제작된 금메달을 시상했다.
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <em class="category">공지사항</em>
+                                    <strong class="tit">한국잡지정보관(박물관) 재개관 안내 </strong>
+                                    <p class="txt">
+                                        (사)한국잡지협회 한국잡지정보관은 단계적 일상회복(위드코로나)로 전환됨에 따라 11월 8일(월)부터
+                                        재개관되오니 이용에 참고하시기 바랍니다.
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
 
-                            <!-- tab 공지사항 -->
-                            <div class="sec_box noticeArea notice_bg">
-                                <h2 class="sec-tit">새소식</h2>
-                                <ol>
-                                    <li>
-                                        <a href="#">
-                                            <span class="txt_date2">2021.11.11</span>
-                                            <span class="txt_tit">한국잡지정보관(박물관) 재개관 안내</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="txt_date2">2021.11.11</span>
-                                            <span class="txt_tit">‘2021년도 우수콘텐츠잡지 육성 및 보급 지원사업’ 만족도 조사 용역</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="txt_date2">2021.11.11</span>
-                                            <span class="txt_tit">제14회 잡지 미디어 콘텐츠 공모전 결과 발표</span>
-                                        </a>
-                                    </li>
-                                </ol>
-                                <a href="#" class="link-more">더보기</a>
-                            </div>
-                            <!-- // tab 공지사항 -->
-
-                            <!-- 알림 -->
-                            <div class="sec_box noticeArea">
-                                <h2 class="sec-tit">잡지계 동향</h2>
-                                <ol class="txtWhite">
-                                    <li>
-                                        <a href="#">
-                                            <span class="txt_date">2019.05.25</span>
-                                            <span class="txt_tit">월간 봉제기술, (주)아덱스미디어에 합류, 법인 전환</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="txt_date">2019.05.25</span>
-                                            <span class="txt_tit">제16회 2021대한민국환경대상 시상식</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="txt_date">2019.05.25</span>
-                                            <span class="txt_tit">창간 30주년 월간 &#60;카테크 &#62;, YouTube 방송 시작..</span>
-                                        </a>
-                                    </li>
-                                </ol>
-                                <a href="#" class="link-more">더보기</a>
-                            </div>
-                            <!-- // 알림 -->
-
-                            <!-- 우측배너-->
-                            <ul class="banner02 al_center">
-                                <li class="icnBanner01">
+                        <h2 class="sec-tit">포토갤러리</h2>
+                        <div class="swiper mGallery-lst">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
                                     <a href="#">
-                                        <i class="las la-desktop"></i>
-                                        <h2 class="sec-tit">한국잡지교육원</h2>
-                                        <p>
-                                            콘텐츠는 곧 사람입니다. <br />
-                                            잡지의 상징은 사람을 통하여 이루어집니다.
-                                        </p>
-                                        <!-- <img src="./images/main/sec-bnr.png" alt="" /> -->
+                                        <span class="thumb">
+                                            <img
+                                                src="http://association.magazine.or.kr/upload_board_files/code_20/thumnail_20211104130820-f77122a9e9.jpg"
+                                                alt=""
+                                            />
+                                        </span>
+                                        <strong class="tit">[잡지의날] 제56회 잡지의 날 기념식</strong>
                                     </a>
                                 </li>
-                                <li class="icnBanner02 txtWhite">
+                                <li class="swiper-slide">
                                     <a href="#">
-                                        <i class="las la-stream"></i>
-                                        <h2 class="sec-tit">
-                                            우수콘텐츠잡지 <br />
-                                            배포관리 시스템
-                                        </h2>
-                                        <!-- <p class="txtWhite mt80">성공창업을 위한 정보를 제공하는<br />온라인 소식지 보러가기</p> -->
+                                        <span class="thumb">
+                                            <img
+                                                src="http://association.magazine.or.kr/upload_board_files/code_20/thumnail_20210714105623-0e65345cb8.jpg"
+                                                alt=""
+                                            />
+                                        </span>
+                                        <strong class="tit">잡지회관 무인주차시스템 설치 </strong>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <span class="thumb">
+                                            <img
+                                                src="http://association.magazine.or.kr/upload_board_files/code_20/thumnail_20210714104723-a11e3cab17.jpg"
+                                                alt=""
+                                            />
+                                        </span>
+                                        <strong class="tit">협회가 다시 불을 밝혔습니다. </strong>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <span class="thumb">
+                                            <img
+                                                src="http://association.magazine.or.kr/upload_board_files/code_20/thumnail_20210615152149-420a1f75bb.jpg"
+                                                alt=""
+                                            />
+                                        </span>
+                                        <strong class="tit">제41회 잡지발행인 세미나 </strong>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <span class="thumb">
+                                            <img
+                                                src="http://association.magazine.or.kr/upload_board_files/code_20/thumnail_20210512095936-13b177388f.jpg"
+                                                alt=""
+                                            />
+                                        </span>
+                                        <strong class="tit">협회 법률 고문·회계 자문 위촉식 </strong>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <span class="thumb">
+                                            <img
+                                                src="http://association.magazine.or.kr/upload_board_files/code_20/thumnail_20211104130820-f77122a9e9.jpg"
+                                                alt=""
+                                            />
+                                        </span>
+                                        <strong class="tit">[잡지의날] 제56회 잡지의 날 기념식</strong>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <span class="thumb">
+                                            <img
+                                                src="http://association.magazine.or.kr/upload_board_files/code_20/thumnail_20210714105623-0e65345cb8.jpg"
+                                                alt=""
+                                            />
+                                        </span>
+                                        <strong class="tit">잡지회관 무인주차시스템 설치 </strong>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <span class="thumb">
+                                            <img
+                                                src="http://association.magazine.or.kr/upload_board_files/code_20/thumnail_20210714104723-a11e3cab17.jpg"
+                                                alt=""
+                                            />
+                                        </span>
+                                        <strong class="tit">협회가 다시 불을 밝혔습니다. </strong>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <span class="thumb">
+                                            <img
+                                                src="http://association.magazine.or.kr/upload_board_files/code_20/thumnail_20210615152149-420a1f75bb.jpg"
+                                                alt=""
+                                            />
+                                        </span>
+                                        <strong class="tit">제41회 잡지발행인 세미나 </strong>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <span class="thumb">
+                                            <img
+                                                src="http://association.magazine.or.kr/upload_board_files/code_20/thumnail_20210512095936-13b177388f.jpg"
+                                                alt=""
+                                            />
+                                        </span>
+                                        <strong class="tit">협회 법률 고문·회계 자문 위촉식 </strong>
                                     </a>
                                 </li>
                             </ul>
-                            <!-- //우측배너-->
-
-                            <!-- 바로가기 배너 -->
-                            <ul class="recu_btn clfix">
-                                <li>
-                                    <a href="#">
-                                        <span>
-                                            <img src="./images/main/ico-goto-1.png" alt="" />
-                                        </span>
-                                        <p>납본안내</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>
-                                            <img src="./images/main/ico-goto-2.png" alt="" />
-                                        </span>
-                                        <p>잡지금고</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>
-                                            <img src="./images/main/ico-goto-3.png" alt="" />
-                                        </span>
-                                        <p>저작권상담</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>
-                                            <img src="./images/main/ico-goto-4.png" alt="" />
-                                        </span>
-                                        <p>회원복지</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>
-                                            <img src="./images/main/ico-goto-5.png" alt="" />
-                                        </span>
-                                        <p>자료모음</p>
-                                    </a>
-                                </li>
-                            </ul>
-                            <!-- // 바로가기 배너 -->
                         </div>
                     </div>
-                    <!-- // 컨텐츠 -->
-                    <!-- //content -->
-                </section>
-                <!-- //container -->
+                </div>
+                <script>
+                    var swiper = new Swiper(".mGallery-lst", {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                        loop: true,
+                        autoplay: {
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        },
+                        breakpoints: {
+                            992: {
+                                slidesPerView: 5,
+                                spaceBetween: 20,
+                            },
+                        },
+                    });
+                </script>
+                <!-- //news -->
+
+                <!-- 회원사현황 -->
+                <div class="mMember">
+                    <div class="container">
+                        <h2 class="tit">회원사 현황</h2>
+                        <p class="txt">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        <a href="#" class="link-more2">more <i class="las la-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- //회원사현황 -->
             </div>
+
             <!-- //main -->
 
             <!-- footer -->
