@@ -1,1 +1,1 @@
-# asso
+# magazine
